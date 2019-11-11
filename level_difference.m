@@ -1,0 +1,12 @@
+warningMessage = sprintf('Close window, select first point to calculate level difference and press ENTER');
+uiwait(msgbox(warningMessage));
+[x,y]=ginput;
+warningMessage = sprintf('Close window, select second point to calculate level difference and press ENTER');
+uiwait(msgbox(warningMessage));
+[t,z]=ginput;
+t=round(t);
+z=round(z);
+x=round(x);
+y=round(y);
+diff=phase_CER(x,y)-phase_CER(t,z);
+sprintf('Level Difference is %d', diff);
